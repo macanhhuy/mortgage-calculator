@@ -1,1 +1,57 @@
 /* Will be compiled down to a single stylesheet with your sass files */
+
+
+body {
+	max-width: 960px;
+	margin: 0 auto;
+  padding-bottom: 200px;
+}
+.payment {
+  font-size:  12pt;
+  color: green;
+}
+form {
+  font-size: 12pt;
+}
+label {
+  font-size: 12pt;
+  line-height: 6pt;
+  color: blue;
+}
+
+
+.table td.right, .table th.right {
+  text-align: right;
+}
+
+.table td.center, .table th.center {
+  text-align: center;
+}
+
+.sliders {
+  padding-right: 50px;
+  width: 400px;
+}
+
+.formula {
+  padding: 50px;
+  padding-right: 200px;
+  width: 200px;
+}
+
+/* SLIDERS */
+.ui-slider-horizontal {
+  height: .2em;
+  margin: 0 10px;
+}
+
+.ui-slider .ui-slider-handle {
+  background: skyblue;
+  width: .5em;
+  height: .5em;
+  margin-left: -3px;
+}
+
+.ui-slider {
+    margin-top: 10px;
+}

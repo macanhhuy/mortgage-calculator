@@ -9,36 +9,96 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+
+        <link rel="stylesheet" href="styles/vendor/ui-lightness/jquery-ui.css"/>
+        <link rel="stylesheet" href="styles/vendor/ui-lightness/jquery.ui.theme.css"/>
+
+        <link rel="stylesheet" href="styles/bootstrap.css"/>
+        <link rel="stylesheet" href="styles/vendor/angular-ui.min.css"/>
         <link rel="stylesheet" href="styles/main.css"/>
+
+
 
     </head>
     <body ng-app="seedApp">
+        <!--
+        ###############################################################
+        #### HANDLE IE
+        ###############################################################
 
+        ######## A message for IE6-7 users -->
         <!--[if lt IE 8]>
+            <br>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
-        
+
+        <!-- ######## Support for IE8+ -->
         <!--[if lt IE 9]>
+            <script>
+                // ########## ANGULAR-UI WAY OF DEALING WITH IE
+                //
+                // The ieshiv takes care of our ui.directives, bootstrap module directives and
+                // AngularJS's ng-view, ng-include, ng-pluralize and ng-switch directives.
+                // However, IF you have custom directives (yours or someone else's) then
+                // enumerate the list of tags in window.myCustomTags
+
+                // YOUR ANGULARJS CUSTOM DIRECTIVES GO HERE
+                window.myCustomTags = [ 'tags', 'pane', 'ng-view' ];
+
+            </script>
+            <script src="scripts/vendor/angular-ui-ieshiv.min.js"></script>
+
+
+            <script>
+                // ########## YEOMAN WAY OF SHIMMING IE
+            </script>
             <script src="scripts/vendor/es5-shim.min.js"></script>
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <div class="container" ng-view></div>
 
-        <script src="scripts/vendor/angular.js"></script>
+        <!--
+        ###############################################################
+        #### SITE CONTENT
+        ###############################################################
+        -->
+
+        <div class="container-fluid" ng-view></div>
+        
+
+
+
+        <!--
+        ###############################################################
+        #### JAVASCRIPT
+        ###############################################################
+        -->
+
+        <!-- SLIDER -->
+        <script src="scripts/vendor/jquery.js"></script>
+        <script src="scripts/vendor/jquery.ui.core.js"></script>
+        <script src="scripts/vendor/jquery.ui.widget.js"></script>
+        <script src="scripts/vendor/jquery.ui.mouse.js"></script>
+        <script src="scripts/vendor/jquery.ui.slider.js"></script>
+
+        <!-- ANGULARJS -->
+        <script src="scripts/vendor/angular.min.js"></script>
+        <script src="scripts/vendor/angular-ui.min.js"></script>
+        <script src="scripts/vendor/ui-bootstrap-tpls-0.1.0-SNAPSHOT.min.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/directives/ui-slider.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            // var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            // s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+
     </body>
 </html>

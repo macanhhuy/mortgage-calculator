@@ -1,0 +1,1 @@
+../../components/angular-bootstrap/dist/ui-bootstrap-tpls-0.1.0-SNAPSHOT.js
