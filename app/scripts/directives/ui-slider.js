@@ -4,32 +4,23 @@ angular.module('slider', []).directive("slider", function() {
   return {
     restrict: 'EA',
     scope: {
-      min: "@",
-      max: "@",
-      step: "@",
-      value1: "=",
-      value2: "="
+      options: "="
     },
     link: function(scope, element, attrs) {
-      var range, values;
-      range = !!scope.value1 && !!scope.value2; 
-      if ( range ) {
-        values = [scope.value1,scope.value2]
-      } else {
-        values = [scope.value1]
-      }
+      var range;
+      range = !!scope.options.handle1 && !!scope.options.handle2;
       return element.slider({
         range: range,
-        min: attrs.min,
-        max: attrs.max,
-        step: new Number(attrs.step),
-        values: values,
+        min: scope.options.min,
+        max: scope.options.max,
+        step: scope.options.step,
+        values: range ? [scope.options.handle1, scope.options.handle2] : [scope.options.handle1],
         slide: function(event, ui) {
-          scope.value1 = ui.values[0];
+          scope.options.handle1 = ui.values[0];
           if (range) {
-            scope.value2 = ui.values[1];
+            scope.options.handle2 = ui.values[1];
           }
-          return scope.$apply();
+          scope.$apply();
         }
       });
     }

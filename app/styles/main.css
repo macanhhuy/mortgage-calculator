@@ -28,14 +28,18 @@ label {
   text-align: center;
 }
 
-.sliders {
+.schedule-sliders {
   padding-right: 50px;
-  width: 400px;
+  width: 450px;
+}
+
+.formula-sliders {
+  width: 350px;
 }
 
 .formula {
   padding: 50px;
-  padding-right: 200px;
+  padding-right: 50px;
   width: 200px;
 }
 
@@ -47,11 +51,16 @@ label {
 
 .ui-slider .ui-slider-handle {
   background: skyblue;
+  top: -3px;
   width: .5em;
   height: .5em;
-  margin-left: -3px;
+  margin-left: -2px;
 }
 
 .ui-slider {
     margin-top: 10px;
+}
+
+slider {
+  display: block;
 }

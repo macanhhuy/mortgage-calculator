@@ -81,7 +81,7 @@ Controller
       $scope["var"].data = [];
       $scope["var"].initialPrinciple = 300000;
       $scope["var"].annualIntrestRate = 5.875;
-      $scope["var"].termInYears = 30;
+      $scope["var"].termInYears = 0;
       $scope["var"].paydown = 0;
       $scope["var"].paydownStart = 0;
       return $scope.calculatePaymentAmountPerPeriod();

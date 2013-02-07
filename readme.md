@@ -1,1 +1,1 @@
-seed-plus: angularjs + angular-ui + ui-bootstrap
+mortgage calculator: set the variables and create an amortization schedule
