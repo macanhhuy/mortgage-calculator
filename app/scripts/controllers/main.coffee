@@ -7,7 +7,12 @@ app.controller "Ctrl", ($scope) ->
     P = $scope.initialPrinciple.handle1
     n = $scope.termInYears.handle1 * 12
     r = $scope.annualIntrestRate.handle1 / 100 / 12
-    A = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
+    if r == 0 
+      A = P / n;
+    else 
+      A = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
+
+
     A = Math.ceil(A * 100) / 100
 
     $scope.paymentAmountPerPeriod = A
@@ -89,21 +94,21 @@ app.controller "Ctrl", ($scope) ->
 
     $scope.initialPrinciple = {
       min: 0,
-      max: 500000,
+      max: 1500000,
       step: 10000,
-      handle1: 300000
+      handle1: 500000
     };
 
     $scope.annualIntrestRate = {
-      min: 4.0,
-      max: 6.0,
+      min: 0.0,
+      max: 10.0,
       step: 0.025,
-      handle1: 5.875
+      handle1: 4.0
     };
 
     $scope.termInYears = {
       min: 1,
-      max: 30,
+      max: 40,
       step: 1,
       handle1: 30
     };
